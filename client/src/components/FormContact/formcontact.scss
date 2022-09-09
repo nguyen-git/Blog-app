@@ -1,0 +1,53 @@
+@import "../../global.scss";
+.contact {
+    font-family: "Josefin Sans", "sans-serif";
+  .contactBanner {
+    width: 100%;
+    height: 600px;
+
+    img {
+      width: 100%;
+      height: 600px;
+      object-fit: cover;
+    }
+  }
+    .contactImage {
+      width: 200px;
+      height: 450px;
+      flex: 1;
+      
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+
+    .contactForm {
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      flex: 1;
+      .formGroup {
+        .formInput {
+          width: 100%;
+          padding: 0.5rem;
+          font-size: 14px;
+          margin-top: 0.5rem;
+          outline: none;
+        }
+    }
+    .contactSubmit {
+        .inputSubmit {
+            @include button(teal);
+
+            &:hover {
+                opacity: 0.8;
+            }
+        }
+
+    }
+    }
+
+}

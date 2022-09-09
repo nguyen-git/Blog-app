@@ -1,0 +1,40 @@
+$primary-color: white;
+$secondary-color: rgb(141, 0, 0);
+$color-text: #000;
+$color-desc: rgb(76, 74, 74);
+
+$dark-background: #222;
+
+
+@mixin medium ($value, $maxValue) {
+  @media screen and (min-width: $value) and (max-width: $maxValue){
+    @content;
+  }
+}
+
+@mixin mobile($value) {
+  @media screen and (max-width: $value) {
+    @content;
+  }
+}
+
+@mixin ipad($value, $maxValue) {
+  @media screen and (min-width: $value) and (max-width: $maxValue) {
+    @content;
+  }
+}
+
+
+@mixin button($value: $secondary-color) {
+  right: 9.5rem;
+  top: 20px;
+  padding: 10px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  background-color: $value;
+  cursor: pointer;
+}

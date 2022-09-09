@@ -1,0 +1,127 @@
+@import "../../global.scss";
+.header {
+  height: 80px;
+  width: 100%;
+  top: 0;
+  position: sticky;
+  display: flex;
+  align-items: center;
+  font-family: "Josefin Sans", "sans-serif";
+  z-index: 9999;
+  transition: ease-in-out 0.5s;
+
+  &.active {
+    height: 70px;
+    background-color: $primary-color;
+    scale: (1, 2);
+    transition: ease-in-out 0.25s;
+    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.7);
+    -webkit-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.7);
+    -moz-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.7);
+
+    & a {
+      color: $secondary-color;
+    }
+
+    & .userHeader {
+      color: $secondary-color;
+    }
+  }
+
+  .topRight {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .topLeft,
+  .topRight {
+    flex: 3;
+    margin: 0 4rem;
+    @include ipad(860px,1000px) {
+      flex: 2.5;
+      margin: 0 2rem;
+      font-size: 0.9rem;
+  }
+  }
+  .topCenter {
+    flex: 6;
+    .topList {
+      display: flex;
+      justify-content: space-between;
+      .listItem {
+        display: inline-block;
+        font-size: 1rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        text-align: center;
+        position: relative;
+        @include ipad(860px,1000px) {
+          font-size: 0.9rem;
+      }
+        &::after {
+          content: "";
+          position: absolute;
+          left: 0;
+          bottom: -5px;
+          height: 2px;
+          width: 100%;
+          background-color: $primary-color;
+          transform: scale(0, 0);
+          transition: 0.3s ease;
+        }
+        &:hover::after {
+          transform: scale(1, 1);
+        }
+      }
+    }
+    @include mobile (640px){
+      display: none;
+    }
+    @include ipad(640px,860px) {
+      display: none;
+  }
+  }
+  .topRight {
+    .userHeader {
+      padding: 16px;
+      position: relative;
+
+      &:hover .userHeaderSetting {
+        display: block;
+      }
+      .userHeaderSetting {
+        bottom: -100px;
+        position: absolute;
+        display: none;
+        background-color: $primary-color;
+        padding: 1rem;
+        box-shadow: 0px 12px 30px -11px rgba(0, 0, 0, 0.75);
+        -webkit-box-shadow: 0px 12px 30px -11px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: 0px 12px 30px -11px rgba(0, 0, 0, 0.75);
+        border-radius: 5px;
+
+        ul {
+          width: 135px;
+          li {
+            margin: 8px 0;
+            padding: 2px;
+            border-radius: 5px;
+            cursor: pointer;
+            &:hover {
+              background-color: $color-text;
+              p{
+                color: $primary-color;
+              }
+            }
+            p {
+              display: flex;
+              align-items: center;
+              gap: 0.25rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,120 @@
+@import "../../global.scss";
+.singleWrite {
+  padding-top: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  .writeImg {
+    width: 80%;
+    height: 500px;
+    margin-bottom: 3rem;
+    position: relative;
+    @include mobile(640px) {
+      width: 60%;
+      height: 50%;
+    }
+    @include ipad(640px, 860px) {
+      width: 70%;
+      height: 50%;
+    }
+    .img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      border-radius: 20px;
+    }
+  }
+  .icon {
+    width: 25px;
+    height: 25px;
+    font-size: 20px;
+    cursor: pointer;
+  }
+
+  .writeToolBar {
+    .toolbars {
+      list-style-type: none;
+      .toolbar {
+        font-size: 20px;
+        display: inline-block;
+        padding-right: 1rem;
+        cursor: pointer;
+        &:hover {
+          transform: scale(1.1, 1.1);
+          transition: 0.25s ease;
+        }
+      }
+    }
+    @include ipad(640px, 860px) {
+      width: 70%;
+      height: 50%;
+    }
+  }
+  .writeForm {
+    position: relative;
+    @include mobile(640px) {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    @include ipad(640px, 860px) {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .writeFormGroup {
+      display: flex;
+      align-items: center;
+      .writeInput {
+        font-size: 30px;
+        border: none;
+        padding: 20px 20px 0 0;
+        width: 70vw;
+        outline: none;
+      }
+      .writeText {
+        width: 1323px;
+        height: 100vh;
+        outline: none;
+        border: none;
+        font-size: 20px;
+        resize: none;
+        margin-top: 20px;
+        @include mobile(640px) {
+          width: 420px;
+        }
+        @include ipad(640px, 860px) {
+          width: 480px;
+        }
+        @include medium(860px, 1000px) {
+          width: 680px;
+        }
+      }
+    }
+    .writeButton {
+      @include button(teal);
+      position: absolute;
+      right: 45px;
+      top: -70px;
+      @include mobile(640px) {
+        position: absolute;
+        right: 30px;
+        top: -70px;
+      }
+      @include ipad(640px, 860px) {
+        position: absolute;
+        right: 30px;
+        top: -70px;
+      }
+      @include medium(860px, 1000px) {
+        position: absolute;
+        right: 0px;
+        top: -70px;
+      }
+    }
+  }
+}

@@ -1,0 +1,5 @@
+.single-body {
+    display: flex;
+    gap: 2rem;
+    margin: 2rem 4rem;
+}

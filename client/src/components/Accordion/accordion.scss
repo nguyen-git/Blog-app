@@ -1,0 +1,74 @@
+@import "../../global.scss";
+
+.accordion {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 4rem 14rem;
+    @include mobile (640px) {
+        margin: 4rem;
+    }
+    @include ipad (640px, 860px) {
+        margin: 4rem;
+    }
+    @include medium (860px, 1000px) {
+        margin: 4rem;
+    }
+    .item {
+        display: flex;
+        flex-direction: column;
+
+        .heading {
+            font-size: 2rem;
+            text-align: center;
+            font-weight: 100;
+            letter-spacing: 2px;
+            @include mobile (640px) {
+                font-size: 1.5rem;
+            }
+            @include ipad (640px, 860px) {
+                font-size: 1.5rem;
+            }
+        }
+        .detail {
+            color: rgb(62, 54, 54);
+            font-style: italic;
+            letter-spacing: 2px;
+            margin: 1.4rem 0;
+        }    
+    }
+    .question {       
+        margin-bottom: 1rem;
+        
+        .questionItem{
+            border-radius: 5px;
+            padding: 10px 20px;
+            background-color: #f0ebe1;
+            margin-bottom: 1rem;
+            .title {
+                text-align: left;
+                padding-left: 2rem;
+                text-transform: uppercase;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                cursor: pointer;
+            }
+            .content {
+                max-height: 0;
+                overflow: hidden;
+                transition: all 0.2s ease;
+                line-height: 24px;
+                font-size: small;
+                &.show {
+                    margin: 12px 0;
+                    height: auto;
+                    max-height: 400px;
+                    transition: all 0.5s ease-in-out;
+                }
+            }
+        }
+
+    }
+}

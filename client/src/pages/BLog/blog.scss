@@ -1,0 +1,55 @@
+@import "../../global.scss";
+.blog {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    .blogContainer {
+        display: flex;
+        margin: 1rem 4rem;
+        // justify-content: center;
+        // align-items: center;
+        width: 1000px;
+        @include mobile(640px) {
+            width: 480px;
+            align-items: center;
+        }
+        @include ipad (640px, 860px) {
+            width: 480px;
+            align-items: center;
+        }
+        @include medium(860px, 1000px) {
+            width: 480px;
+            align-items: center;
+          }
+    }
+    .filterPost {
+        margin-bottom: 2rem;
+        ul {
+            
+            li {
+                display: inline-block;
+                margin: 0 2rem;
+                border-radius: 4px;
+                padding: 10px 12px;
+                @include mobile (640px) {
+                    margin: 0 0.5rem;
+                }
+                @include ipad (640px, 860px) {
+                    margin: 0 0.5rem;
+                }
+                @include medium(860px, 1000px) {
+                    margin: 0 2rem;
+                  }
+                &:active {
+                    color: $color-text;
+                    background-color: $color-desc;
+                }
+    
+                a {
+                    color: $color-text;
+                }
+            }
+        }
+    }
+}

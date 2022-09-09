@@ -1,0 +1,21 @@
+.filterPost {
+    margin-bottom: 2rem;
+    ul {
+        
+        li {
+            display: inline-block;
+            margin: 0 2rem;
+            border-radius: 4px;
+            padding: 10px 12px;
+
+            &:active {
+                color: black;
+                background-color: #ccc;
+            }
+
+            a {
+                color: black;
+            }
+        }
+    }
+}

@@ -1,0 +1,22 @@
+@import "../../global.scss";
+.App.darkMode {
+  .userContainer {
+    background-color: $dark-background;
+    color: $primary-color;
+  }
+  .userSideBar {
+    background-color: $dark-background;
+    color: $primary-color;
+    .content li {
+      color: $primary-color;
+    }
+  }
+
+  .userAccountContainer {
+    background-color: $dark-background;
+  }
+
+  .userAccountPost {
+    background-color: $dark-background;
+  }
+}
