@@ -3,7 +3,6 @@ import dotenv from "dotenv";
 import cors from "cors";
 import bodyParser from "body-parser";
 import cookieParser from "cookie-parser";
-import multer from "multer";
 import Connection from "./connection/connection.js";
 
 import authRoute from "./routes/auth.js";
@@ -30,22 +29,6 @@ app.use("/api/auth", authRoute);
 app.use("/api/users", userRoute);
 app.use("/api/posts", postRoute);
 app.use("/api/categories", categoryRoute);
-
-const storage = multer.diskStorage({
-  destination: (req, file, callback) => {
-    callback(null,"images");
-  },
-  filename: (req, file, callback) => {
-    callback(null, req.body.name);
-  },
-});
-
-const upload = multer({storage: storage});
-
-app.post("/api/upload", upload.single("file", (req, res) => {
-  res.status(200).json("File has been uploaded...");
-}));
-
 
 app.listen(port, () => {
   console.log(`Server listening on ${port}`);
